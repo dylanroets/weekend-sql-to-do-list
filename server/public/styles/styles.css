@@ -5,3 +5,11 @@ body {
     background-color: blanchedalmond;
     color: #e06d06ff;
 }
+.empty-box {
+    color: dimgrey;
+    font-size: larger;
+}
+.completed-task {
+    background-color: seagreen;
+    color: blanchedalmond;
+}

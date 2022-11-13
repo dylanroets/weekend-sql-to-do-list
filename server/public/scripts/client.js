@@ -91,16 +91,30 @@ function renderToDos(tasks) {
 	console.log('in renderToDos');
 	for (let i = 0; i < tasks.length; i++) {
 		let toDo = tasks[i];
-		$('#entries').append(`
-		<tr>
-			<td>${toDo.chore}</td>
-			<td>${toDo.isFinished}</td>
-			<td>
-				<button class="update-btn" data-id="${toDo.id}">Finished Task</button>
-			</td>
-			<td>
-				<button class="delete-btn" data-id="${toDo.id}">Delete Task</button>
-			</td>
-		`)
+		if (toDo.isFinished == false) {
+			$('#entries').append(`
+			<tr>
+				<td>${toDo.chore}</td>
+				<td class="empty-box">❏</td>
+				<td>
+					<button class="update-btn" data-id="${toDo.id}">Finished Task</button>
+				</td>
+				<td>
+					<button class="delete-btn" data-id="${toDo.id}">Delete Task</button>
+				</td>
+			`)
+		} else {
+			$('#entries').append(`
+			<tr class="completed-task">
+				<td>${toDo.chore}</td>
+				<td class="checked-box">☑️</td>
+				<td>
+					<button class="update-btn" data-id="${toDo.id}">Finished Task</button>
+				</td>
+				<td>
+					<button class="delete-btn" data-id="${toDo.id}">Delete Task</button>
+				</td>
+			`)
+		}
 	}	
 }
