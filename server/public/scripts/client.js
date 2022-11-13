@@ -1,5 +1,5 @@
-$(document).ready(function () {
-	console.log('JS & JQ Working');
+$(document).ready(onReady);
 
-
-});
+function onReady() {
+	console.log('JS & JQ working');
+}

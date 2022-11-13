@@ -1,6 +1,6 @@
 const express = require('express');
-const choreRouter = express.Router();
-const pool = require('../modules/pool');
+const router = express.Router();
+const pool = require('../modules/pool.js');
 
 
 
@@ -16,5 +16,4 @@ const pool = require('../modules/pool');
 
 
 
-
-module.exports = choreRouter;
+module.exports = router;
