@@ -93,8 +93,8 @@ function renderToDos(tasks) {
 		let toDo = tasks[i];
 		if (toDo.isFinished == false) {
 			$('#entries').append(`
-			<tr>
-				<td>${toDo.chore}</td>
+			<tr class="appended-tr">
+				<td class="appended-chore">${toDo.chore}</td>
 				<td class="empty-box">❏</td>
 				<td>
 					<button class="update-btn" data-id="${toDo.id}">Finished Task</button>
@@ -105,8 +105,8 @@ function renderToDos(tasks) {
 			`)
 		} else {
 			$('#entries').append(`
-			<tr class="completed-task">
-				<td>${toDo.chore}</td>
+			<tr class="appended-tr" id="completed-task">
+				<td class="appended-chore">${toDo.chore}</td>
 				<td class="checked-box">☑️</td>
 				<td>
 					<button class="update-btn" data-id="${toDo.id}">Finished Task</button>
