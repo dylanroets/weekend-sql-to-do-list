@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="utf-8">
@@ -12,9 +11,18 @@
         <link rel="stylesheet" href="styles/styles.css">
     </head>
     <body>
-        <h1>Testing</h1>
-        <div id="toDoEntries">
-
+        <h1>To Do List:</h1>
+        <h2>New To Do:</h2>
+        <input
+        id="new-chore-input"
+        type="text"
+        style="height: 1.5em; width: 35em;"
+        placeholder="Description"
+        />
+        <button id="add-chore-btn">Add To Do</button>
+        <div id="entries">
+            <p id="nameLine"></p>
+            <p></p>
         </div>
     </body>
 </html>
