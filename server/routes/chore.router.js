@@ -37,7 +37,17 @@ choreRouter.post('/', (req, res) => {
 
 
 // PUT Route
-
+choreRouter.put('/:id', (req, res) => {
+	const taskId = req.params.id;
+	let queryReady = `UPDATE "choreTable" SET "isFinished" = NOT "isFinished" WHERE "id" = $1;`;
+	pool.query(queryReady, [taskId]).then(() => {
+		console.log('task ID:', taskId, 'has been updated true is finished.');
+		res.sendStatus(200);
+	}).catch((error) => {
+		console.log('Error with marking task finished:', error);
+		res.sendStatus(500);
+	});
+});
 
 // DELETE Route
 choreRouter.delete('/:id', (req, res) => {

@@ -11,6 +11,7 @@ function onReady() {
 // Click Listeners
 function clickListeners() {
 	$('#entries').on('click', '.delete-btn', deleteTask);
+	$('#entries').on('click', '.update-btn', markFinished);
 	$('#add-chore-btn').on('click', addChore)
 }
 
@@ -52,7 +53,19 @@ function addChore() {
 }
 
 // PUT
-
+function markFinished() {
+	const id = $(this).data("id");
+	console.log('In markReady working with ID#', id);
+	$.ajax({
+		method: 'PUT',
+		url: `/chore_table/${id}`,
+	}).then(function () {
+		console.log(`Task #${id} is ready to go.`);
+		getList();
+	}).catch(function (error) {
+		alert(`markReady function failure:`, error);
+	});
+}
 
 // DELETE
 function deleteTask() {
@@ -82,6 +95,9 @@ function renderToDos(tasks) {
 		<tr>
 			<td>${toDo.chore}</td>
 			<td>${toDo.isFinished}</td>
+			<td>
+				<button class="update-btn" data-id="${toDo.id}">Finished Task</button>
+			</td>
 			<td>
 				<button class="delete-btn" data-id="${toDo.id}">Delete Task</button>
 			</td>
