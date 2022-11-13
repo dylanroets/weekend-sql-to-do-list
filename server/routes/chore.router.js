@@ -20,12 +20,12 @@ choreRouter.get('/', (req, res) => {
 
 // POST Route
 choreRouter.post('/', (req, res) => {
-	const newChore = req.body;
+	const newEntry = req.body;
 	const queryText = `
 	INSERT INTO "choreTable" 
 	("chore", "isFinished") 
-	VALUES ($1);`;
-	pool.query(queryText, [newChore.chore])
+	VALUES ($1, $2);`;
+	pool.query(queryText, [newEntry.chore, newEntry.isFinished])
 		.then((result) => {
 			console.log('POST result from DB', result);
 			res.sendStatus(201);

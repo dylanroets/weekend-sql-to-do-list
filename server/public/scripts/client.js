@@ -11,6 +11,7 @@ function onReady() {
 // Click Listeners
 function clickListeners() {
 	$('#entries').on('click', '.delete-btn', deleteTask);
+	$('#add-chore-btn').on('click', addChore)
 }
 
 // GET
@@ -29,17 +30,21 @@ function getList() {
 }
 
 // POST
-function addChore(newChore) {
+function addChore() {
+	const chore = $('#new-chore-input').val();
+	const isFinished = false;
+	newChore = {
+		chore: chore,
+		isFinished: isFinished
+	}
 	$.ajax({
 		method: 'POST',
 		url: '/chore_table',
 		data: newChore
 	}).then(function (response) {
-		console.log('...back from POSTING to DataBase');
 		//getList();
 		console.log('This is what was sent to DB: ', response);
-		$('#chore').val('');
-		$('#isFinished').val('');
+		$('#new-chore-input').val('');
 		getList();
 	}).catch(function (error) {
 		alert('addChore function has failed to POST to DataBase!');
