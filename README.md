@@ -11,11 +11,9 @@ I developed a full stack web application to handle anyone's personal "To Do List
 To see the fully functional site, please visit: please see me because it's only local right now!
 
 ## Screen Shots
-![Alt text](../../../../../../../var/folders/fk/xbndvqmx7t3gfqm_xfvs0w_w0000gn/T/TemporaryItems/NSIRD_screencaptureui_V6PFWl/Screen%20Shot%202022-11-13%20at%204.30.47%20PM.png)
+![Alt text](Screen%20Shot%202022-11-13%20at%204.42.21%20PM.png)
 
-![Alt text](../../../../../../../var/folders/fk/xbndvqmx7t3gfqm_xfvs0w_w0000gn/T/TemporaryItems/NSIRD_screencaptureui_LpUu53/Screen%20Shot%202022-11-13%20at%204.30.16%20PM.png)
-
-
+![Alt text](Screen%20Shot%202022-11-13%20at%204.42.50%20PM.png)
 ### Prerequisites
 
 Link to software that is required to install the app (e.g. node).
